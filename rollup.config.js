@@ -22,7 +22,14 @@ export default [{
     format: 'cjs',
     sourcemap: true
   }],
-  external: id => /^(lib0|y-protocols|prosemirror|yjs)/.test(id)
+  external: id => /^(y-protocols|prosemirror|yjs)/.test(id),
+  plugins: [
+    // debugResolve,
+    nodeResolve({
+      mainFields: ['module', 'main']
+    }),
+    commonjs()
+  ],
 }, {
   input: './tests/index.js',
   output: {
@@ -67,5 +74,5 @@ export default [{
     }),
     commonjs()
   ],
-  external: id => /^(lib0|prosemirror|fs|path|jsdom|isomorphic)/.test(id)
+  external: id => /^(prosemirror|fs|path|jsdom|isomorphic)/.test(id)
 }]
