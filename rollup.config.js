@@ -22,7 +22,7 @@ export default [{
     format: 'cjs',
     sourcemap: true
   }],
-  external: id => /^(y-protocols|prosemirror|yjs)/.test(id),
+  external: id => /^(prosemirror|yjs)/.test(id),
   plugins: [
     // debugResolve,
     nodeResolve({
