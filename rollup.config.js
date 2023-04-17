@@ -17,12 +17,26 @@ const debugResolve = {
 export default [{
   input: './src/y-prosemirror.js',
   output: [{
+    file: 'dist/y-prosemirror.esm.js',
+    format: 'esm',
+    sourcemap: true
+  }],
+  external: id => /^(prosemirror)/.test(id),
+  plugins: [
+    // debugResolve,
+    nodeResolve({
+      mainFields: ['module', 'main']
+    }),
+    commonjs()
+  ]},{
+  input: './src/y-prosemirror.js',
+  output: [{
     name: 'Y',
     file: 'dist/y-prosemirror.cjs',
     format: 'cjs',
     sourcemap: true
   }],
-  external: id => /^(prosemirror|yjs)/.test(id),
+  external: id => /^(prosemirror)/.test(id),
   plugins: [
     // debugResolve,
     nodeResolve({

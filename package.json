@@ -1,9 +1,9 @@
 {
   "name": "y-prosemirror-lat-special",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Prosemirror bindings for Yjs",
   "main": "./dist/y-prosemirror.cjs",
-  "module": "./src/y-prosemirror.js",
+  "module": "./dist/y-prosemirror.esm.js",
   "type": "module",
   "types": "./dist/src/y-prosemirror.d.ts",
   "sideEffects": false,
@@ -22,7 +22,7 @@
   },
   "exports": {
     ".": {
-      "import": "./src/y-prosemirror.js",
+      "import": "./dist/y-prosemirror.esm.js",
       "require": "./dist/y-prosemirror.cjs"
     }
   },
